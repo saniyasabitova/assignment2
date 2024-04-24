@@ -1,6 +1,12 @@
 import java.util.Iterator;
 
 public class MyLinkedList<T> implements MyList<T> {
+
+    private class Node <E>{
+    E data;
+    Node next;
+}
+
     Node head;
 
     public void add(T item){
@@ -50,15 +56,14 @@ public class MyLinkedList<T> implements MyList<T> {
         node.next = null;
 
         if(head==null){
-            node = head;
+            head = node;
         }
         else{
             Node n = head;
             while(n.next!=null) {
                 n = n.next;
 
-            }
-            n.next = node;
+            } n.next = node;
         }
  }
  public void show(){
@@ -79,8 +84,7 @@ public class MyLinkedList<T> implements MyList<T> {
         return (T) n;
  }
  public T getFirst(){
-     System.out.println(head.data);
-        return (T) head;
+        return (T) head.data;
  }
 public T getLast(){
         Node <T> n = head;
@@ -159,15 +163,22 @@ boolean exists(Object object){
 
  }
 public int size(){
+        if(head == null){
+            return 0;
+        }
       Node<T> n=head;
         int c=0;
         while(n.next!=null){
             n = n.next;
             c++;
         }
-    System.out.println("The size is "+ c+1);
+    //System.out.println("The size is "+ c+1);
         return c+1;
 }
+public T getData(Node<T> node){
+        return node.data;
+}
+
 
 
     @Override
