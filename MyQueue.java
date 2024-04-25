@@ -1,4 +1,4 @@
-public class MyQueue<T> {
+public class MyQueue<T extends Comparable<T>> {
    MyLinkedList<T> linky = new MyLinkedList<T>();
 
     public MyQueue() {
@@ -30,6 +30,7 @@ public class MyQueue<T> {
        linky.removeFirst();
        return item_deleted; //look again
       }
+
 
 
 }

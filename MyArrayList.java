@@ -105,7 +105,22 @@ public class MyArrayList<T extends Comparable<T>> implements MyList<T>  {
          System.out.println("There is no such element here");
         return -1;
     }
-     public void clear(){
+
+    @Override
+    public boolean exists(Object object) {
+        int i =0;
+        for(i=0;i<size;i++){
+            if(((T)array[i]).equals(object)){
+                return true;
+
+            }
+
+
+        }
+        return false;
+    }
+
+    public void clear(){
 
             array = null;
 
