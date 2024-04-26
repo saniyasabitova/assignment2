@@ -5,12 +5,12 @@ public class MyStack<T extends Comparable<T>> {
             return true;
         }return false;
     }
-//Проверяет, является ли стек пустым. Возвращает true, если стек пустой. Возвращает false, если стек содержит элементы.
+
 	public Object peek(){
        return linky.getLast();
     }
 
-//Возвращает элемент, находящийся в верхней части стэка, но не удаляет его.
+
     public int size(){
        return linky.size();
    }
@@ -19,12 +19,12 @@ public class MyStack<T extends Comparable<T>> {
         linky.removeLast();
         return o;
     }
-//Возвращает элемент, находящийся в верхней части стэка, удаляя его в процессе.
+
 	public Object push(Object element){
         linky.addLast((T) element);
         return element;
     }
-//Вталкивает элемент в стек. Элемент также возвращается.
+
 int search(Object element){
         int a = linky.indexOf((T)element);
         if(linky.exists((T)element)){

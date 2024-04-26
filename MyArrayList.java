@@ -1,6 +1,7 @@
 import java.util.Iterator;
 
 public class MyArrayList<T extends Comparable<T>> implements MyList<T>  {
+    public T show;
     private Object[] array;
     private int size = 0;
     private int capacity = 10;
@@ -9,6 +10,12 @@ public class MyArrayList<T extends Comparable<T>> implements MyList<T>  {
     }
     public T get(int index){
         return (T )array[index];
+    }
+    
+    public void show(){
+        for(int i=0;i<size-1;i++){
+            System.out.print((T)array[i] +" \t");
+        }
     }
 
 
