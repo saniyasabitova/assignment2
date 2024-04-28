@@ -38,7 +38,7 @@ public class Main {
         integers.sort();
         integers.removeFirst();
         integers.set(2,6);
-        
+
 
 
 
