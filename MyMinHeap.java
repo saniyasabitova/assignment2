@@ -6,28 +6,39 @@ public class MyMinHeap<T extends Comparable<T>> {
     public MyMinHeap() {
         linky = linky;
     }
-
+    /*This method checks whether the list is empty or not. In case of empty, returns the value true,otherwise false*/
     public boolean empty() {
         if (linky.size() == 0) {
             return true;
         }
         return false;
     }
-
+   /*This method does not take anything as parameter and returns the size of array*/
     public int size() {
         return linky.size();
     }
-
+/*The method returns the root element of Min Heap
+* does not take anything as parameter
+* Time Complexity is O(1)*/
     public T getMin() {
         return linky.getFirst();
     }
 
+/*The method takes as parameter element and adds it to the end of list,
+* if they violates the property, calls method traverse up
+* Time complexity is O(log n)*/
     public void insert(T element) {
         linky.addLast(element);
         heapify(linky.size()-1);
     }
+    /*The method deletes the root element also returns the root element of Min Heap
+    *after removing the root, it calls heapify down method
+    * (it address the issue of violating the rule)
+    * that's why time complexity is O(log n)
+* does not take anything as parameter
+* in case of size empty, throws new NoSuchElementException */
 
-    public T extraMin() {
+    public T extracMin() {
 if (linky.size()==0) {
         throw new NoSuchElementException("Heap is empty");
     }
@@ -45,6 +56,7 @@ if (linky.size()==0) {
     }
 
     //privates:
+    /**/
     private void swap(int i, int j) {
         T temp = linky.get(i);
         linky.set(i, linky.get(j));
