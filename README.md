@@ -9,11 +9,18 @@ contain all the necessary methods as add(T item, int index),set(T item, int inde
 MyArrayList:
 Fields:
     private Object[] array: an array to hold all the elements.
+    
     private int size: number of elemenets currently in the list.
+    
     private int capacity: maximum number of elements of the array.
+    
 MyLinkedList:
+
     private ListNode<T> head: the front, beginning of linked list
+    
     private ListNode<T> tail: the end of the list
+    
     private int size:number of elemenets currently in the list.
+    
    Both of them have methods described above.
  
